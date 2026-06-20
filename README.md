@@ -1,32 +1,90 @@
-# Prueba Técnica - Desarrollador Jr ⚡️
+# Prueba Técnica - Desarrollador Jr
 
-¡Hola 👋 y bienvenido/a a nuestra prueba técnica para la posición de  Desarrollador Jr! Esta prueba está diseñada para evaluar tus habilidades en el desarrollo backend y frontend para una lista de tareas.
+Hola, Esta es mi solución para la prueba técnica de Desarrollador Jr.
 
-## Instrucciones
+## Características
 
-1. **Fork/Clone este repositorio:** Comienza haciendo un fork de este proyecto y continua clonando tu repositorio en tu máquina local. Aquí encontrarás los archivos y carpetas necesarios para completar la prueba.
+- **Backend Modular:** API RESTful estructurada con separación de responsabilidades (Controladores y Rutas).
+- **Frontend Clean Code:** Interfaz de usuario minimalista inspirada en iOS, construida sin frameworks externos.
+- **Responsividad:** Diseño Mobile-First con un Floating Action Button (FAB) y modal.
+- **Operaciones CRUD:** Capacidad para listar, crear y eliminar tareas en tiempo real.
 
+## Vista Previa
 
-2. **Parte 1: Desarrollo de la API:** Dirígete a la carpeta "backend" y desarrolla una API básica utilizando Node.js y Express.js en JavaScript. La API debe permitir crear, listar y eliminar tareas.
+![Vista principal sin tareas](./assets/main-view-empty.png)
+![Vista principal de las tareas](./assets/main-view.png)
+![Modal de nueva tarea](./assets/modal-view.png)
 
-3. **Parte 2: Frontend para la Lista de Tareas:** Ve a la carpeta "frontend" y crea una interfaz de usuario simple para la lista de tareas utilizando HTML, JavaScript y CSS. Consume la API RESTful que desarrollaste en la Parte 1 para crear, mostrar y eliminar tareas.
+## Tecnologías Utilizadas
 
-4. **Tiempo estimado:** Esperamos que completes la prueba en aproximadamente 5 días.
+**Backend:**
+- Node.js
+- Express.js
+- CORS
+- Crypto (Generación de UUIDs)
+- Nodemon (Desarrollo)
 
-## Requisitos
+**Frontend:**
+- HTML5 Semántico
+- CSS3 (Custom Properties, Flexbox, Scroll personalizado)
+- Vanilla JavaScript (Fetch API, Async/Await)
 
-- Para la Parte 1, utiliza JavaScript/Typescript con Node.js y Express.js para desarrollar la API.
-- Cada tarea debe tener un título, una descripción y un identificador único.
-- Para la Parte 2, asegúrate de que la interfaz de usuario sea amigable y fácil de usar.
+## Estructura del Proyecto
 
-## ¿Cómo enviar tu solución?
+El proyecto está dividido en dos directorios principales para mantener la separación entre el cliente y el servidor:
 
-1. **Commit y Pull Request:** Una vez que hayas completado la prueba, realiza un ultimo commit con tus cambios y envía un Pull Request con tus soluciones. Se recomienda que cada paso reaizado se complemente con un commit.
+```text
+/ developer-jr-challenge
+├── assets/
+│   ├── main-view-empty.png
+│   ├── main-view.png
+│   ├── modal-view.png
+├── backend/
+│   ├── src/
+│   │   ├── controllers/
+│   │   │   └── task.controller.js
+│   │   ├── routes/
+│   │   │   └── task.routes.js
+│   │   └── index.js
+│   └── package.json
+└── frontend/
+    ├── index.html
+    ├── styles.css
+    └── app.js
+```
 
-2. **¿Tienes dudas?** Si tienes preguntas o necesitas aclaraciones, no dudes en abrir un issue en este repositorio. Estamos aquí para ayudarte en todo el proceso.
+## Cómo ejecutar el proyecto localmente
 
-## ¡Buena suerte!
+Sigue estos pasos para levantar el entorno de desarrollo en tu máquina local.
 
-Esperamos que disfrutes de esta prueba técnica y te diviertas desarrollando la lista de tareas. Si tienes alguna pregunta o necesitas ayuda, no dudes en contactarnos. ¡Estamos emocionados de ver lo que puedes hacer!
+### 1. Clonar el repositorio
+\`\`\`bash
+git clone https://github.com/dxbae-dev/developer-jr-challenge.git
+cd developer-jr-challenge
+\`\`\`
 
-¡Buena suerte y feliz codificación! 🚀
+### 2. Levantar la API (Backend)
+Abre una terminal, navega a la carpeta del backend, instala las dependencias y arranca el servidor:
+
+\`\`\`bash
+cd backend
+npm i
+npm run dev
+\`\`\`
+El servidor estará corriendo en `http://localhost:3000`.
+
+### 3. Levantar la Interfaz (Frontend)
+El frontend no requiere instalación de dependencias. Puedes ejecutarlo de cualquiera de estas formas:
+- Abriendo el archivo `frontend/index.html` directamente en tu navegador web.
+- Utilizando una extensión como **Live Server** en VS Code para recarga en caliente.
+
+## Documentación de la API
+
+| Método | Endpoint          | Descripción                 | Body de Ejemplo                          |
+|--------|-------------------|-----------------------------|------------------------------------------|
+| GET    | `/api/tasks`      | Obtiene todas las tareas    | -                                        |
+| POST   | `/api/tasks`      | Crea una nueva tarea        | `{ "title": "Estudiar", "description": "Repasar Node.js" }` |
+| DELETE | `/api/tasks/:id`  | Elimina una tarea por ID    | -                                        |
+
+---
+**Autor:** Gerardo Daniel Ramirez Baena
